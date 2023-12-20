@@ -1,6 +1,6 @@
 ---
 title: "APLICACION DE LA METODOLOGIA BOX-JENKINS NO ESTACIONAL PARA MODELAR UN ARIMA Y PRONOSTICAR EL PRECIO DE LAS ACCIONES DE TWITTER"
-author: "Document Author"
+author: "Marco Percastre"
 date: "26 de mayo de 2022"
 output:
   prettydoc::html_pretty:

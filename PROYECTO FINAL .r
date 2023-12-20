@@ -45,7 +45,7 @@ library(quantmod)
 
 #INTRODUCCION
 
-Se pretender mostrar una herramienta estadistica de analisis univariante para la prediccion de una empresa que cotice en un mercado continuo y el precio objetivo de la compañia, es decir, su accion. La aplicacion de este modelo es util para valoracion de acciones y empresas, asi como la prediccion de volatilidad. Su unica desventaja es que al ser un modelo que toma en cuenta una unica variable no existe posibilidad de relacionarla con mas variables que afectan al valor de las acciones de una empresa, aun asi, este modelo es demasiado util cuendo se quiere una prediccion a corto plazo debido a su aplicacion estadistica, lo que lo hace un modelo muy util para realizar predicciones de valores bursatiles. 
+Se pretender mostrar una herramienta estadistica de analisis univariante para la prediccion de una empresa que cotice en un mercado continuo y el precio objetivo de la compaÃ±ia, es decir, su accion. La aplicacion de este modelo es util para valoracion de acciones y empresas, asi como la prediccion de volatilidad. Su unica desventaja es que al ser un modelo que toma en cuenta una unica variable no existe posibilidad de relacionarla con mas variables que afectan al valor de las acciones de una empresa, aun asi, este modelo es demasiado util cuendo se quiere una prediccion a corto plazo debido a su aplicacion estadistica, lo que lo hace un modelo muy util para realizar predicciones de valores bursatiles. 
 
 La diferencia entre proceso y modelo. Un proceso es lo real, del cual se desconoce su mecanismo generador. Un modelo es la imitacion o representacion del modelo (Pankratz 1983).
 
@@ -81,7 +81,7 @@ TWTR %>% datatable(class = 'cell-border stripe',
 
 #INFORMACION DE LA VARIABLE A UTILIZAR
 
-De la tabla anterior, la variable utilizada para este proyecto recoge el precio de cierre de cada dia en los ultimos dos años, del 17 de mayo del 2020 al 17 de mayo del 2022. El tamaño muestral de la serie debe ser igual o mayor a 50 observaciones, como se indico anteriormente, para este proyecto el total de observaciones es de 505, por lo que nos lanzara resultados muy efectivos del precio en dolares. Los datos del precio fueron obtenedos de $finance.yahoo.com$ y corresponde a las acciones de Twitter. 
+De la tabla anterior, la variable utilizada para este proyecto recoge el precio de cierre de cada dia en los ultimos dos aÃ±os, del 17 de mayo del 2020 al 17 de mayo del 2022. El tamaÃ±o muestral de la serie debe ser igual o mayor a 50 observaciones, como se indico anteriormente, para este proyecto el total de observaciones es de 505, por lo que nos lanzara resultados muy efectivos del precio en dolares. Los datos del precio fueron obtenedos de $finance.yahoo.com$ y corresponde a las acciones de Twitter. 
 
 
 #GRAFICA DE LA SERIE TEMPORAL, 
@@ -157,7 +157,7 @@ plot(X_tsta, type = 'l',
 la funcion $ndiffs()$ nos permitira encontrar el numero de primeras diferencias necesarias para que la serie de tiempo sea estacionaria, para este caso en particular, nos dice que solo es $1$ el numero de diferencias para hacer que nuestro proceso sea estacionario, como se ve a continuacion:
 
 ```{r}
-ndiffs(X_t) #determinar el número de primeras diferencias necesarias para que las series temporales no sean estacionales
+ndiffs(X_t) #determinar el nÃºmero de primeras diferencias necesarias para que las series temporales no sean estacionales
 ```
 
 La integracion que es el proceso de estabilizacion y diferenciacion, por medio del parametro $d$ dentro del modelo $ARIMA(p,d,q)$. Para nuestro proceso de serie de tiempo es $d=1$.
@@ -267,7 +267,7 @@ $X_{t}=-0.5320BX_{t}+0.1409B^{2}X_{t}+0.5653W_{t}+W_{t}$
 $$X_{t}=-0.5320X_{t-1}+0.1409X_{t-2}+0.5653W_{t-1}+W_{t}$$
 
 #GRAFICA DE LOS RESIDUOS DEL MODELO 
-Aqui es el punto cuatro de la metodologia, la Evaluacion. Un modelo estadisticamente adecuado es aquel cuyos residuales son independientes entre si, es decir, los residuales son completamente aleatorios (4.Modelación ARIMA, UNAM).
+Aqui es el punto cuatro de la metodologia, la Evaluacion. Un modelo estadisticamente adecuado es aquel cuyos residuales son independientes entre si, es decir, los residuales son completamente aleatorios (4.ModelaciÃ³n ARIMA, UNAM).
 
 ```{r echo=FALSE, warning=FALSE, cache=FALSE, message=FALSE}
 urkpssTest(modelo1$residuals, type = c("tau"), lags = c("short"),use.lag = NULL, doplot = TRUE)
@@ -345,20 +345,20 @@ Con lo que respecta al desarrollo del trabajo, debemos mencionar que la predicci
 
 (s.f.). Procesos Integrados. En C. 5.
 
-A Unexpected Route to Time Series. (30 de OCTOBER de 1989). This Weeks Citation Classic, pág. 1.
+A Unexpected Route to Time Series. (30 de OCTOBER de 1989). This Weeks Citation Classic, pÃ¡g. 1.
 
 Campos, F. (2 de Noviembre de 2018). Analisis de series temporales en R. ARIMA. DIEGO CALVO.
 
 Hernandez, S. (2015). Los modelos ARIMA univariantes . Analisis de Series de Tiempo (pags. 1-32). Mexico: CEPAL.
 
-Lopez, A. M. (2011). ESTUDIO DEL AIC Y BIC EN LA SELECCIÓN DE MODELOS DE VIDA CON DATOS CENSURADOS. Guanajuato, Gto.: CIMAT.
+Lopez, A. M. (2011). ESTUDIO DEL AIC Y BIC EN LA SELECCIÃ“N DE MODELOS DE VIDA CON DATOS CENSURADOS. Guanajuato, Gto.: CIMAT.
 
 Martinez, E. C. (14 de Mayo de 2019). EJERCICIO 6 Y 8. RPubs by Rstudio.
 
-Mauricio, J. A. (2007). Análisi de Series Temporales. SERIES TEMPORALES (pags. 1-132). Madrid, España: Universidad Complutense de Madrid.
+Mauricio, J. A. (2007). AnÃ¡lisi de Series Temporales. SERIES TEMPORALES (pags. 1-132). Madrid, EspaÃ±a: Universidad Complutense de Madrid.
 
 Modelacion ARIMA. (s.f.). 41-78.
 
-PRELIMINAR, L. U. (2007). A. B. Iglesias, J. T. Pruñunosa y N. M. Llavines. Escuela Universitaria Caixa Terrassa , 1-13.
+PRELIMINAR, L. U. (2007). A. B. Iglesias, J. T. PruÃ±unosa y N. M. Llavines. Escuela Universitaria Caixa Terrassa , 1-13.
 
 
